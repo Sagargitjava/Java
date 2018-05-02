@@ -1,0 +1,126 @@
+Class 1:
+
+My Git: https://github.com/Sagargitjava/Java
+
+https://www.gotomeet.me/soumC --- meeting link
+
+1. Installed git for windows software.
+2. created workspace. Workspaces naming convention is important. Multiple workspaces are needed in the projects and for that create 1 main 
+folder and under that create each sub folder for each workspace.
+3. Explained what Project Explorer is about.  
+4. Navigator(File explorer) -- also knows as file explorer. Here few extra files are shown. below are the files. 
+   metadata -- .claspath(pomderived property), .project(build specifications and project nature)
+5. Explained the importance of close and open project. When project is closed, it will not consume IDE resources.
+
+keyboard shortcuts in eclipse.
+
+Alt + shift + r -- For rename with refactor
+Ctrl + O -- show methods of this class only
+Ctrl + O + O -- all  methods of hierarchy(till object class) 
+ctrl + shift + O -- organize imports(add imports, remove unwanted imports etc)
+ctrl + shift + t -- find any java class in the workspace(java class type)
+ctrl + shift + r -- find any resource(java class, index.jsp etc)
+pojo/java bean/entity -- it represents data model-- model preserves the state of the object. only getters/setters. Remember main method cannot 
+be there for POJO. This only contains setters/getters.
+ctrl + n -- to create any new entity.
+alt + shift + s + r -- generate getters and setters.
+ctrl + i -- indentation.
+ctrl + shift + f -- formatting -- adjsting brackets etc.
+
+Assignments:
+
+1. try deleting some of the natures and check, how IDE is behaving.Right click project before and after?
+   Answer: The project is maven. when i right click the project, i can see maven option and under Runas option i can find more options 
+           related to maven. But, after commenting the nature in .project file "<nature>org.eclipse.m2e.core.maven2Nature</nature>", project 
+		    became just java with no maven.I couldn't find all the above options now. 
+2. Using git for windows, try to clone the git project and push 1 text file and commit.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Class 2: 
+
+gave demonstration on nature
+
+ctlr + / -- single line commnet
+ctrl + shift + / -- multi line comment
+
+Created maven project.
+Group Id: Comapany name etc
+Artifact Id: Project name etc
+
+
+maven proj structure:
+Code should be src/main/java
+code configuration files in code resources
+Tests should go /src/test/java
+code configuration files in resources
+test configuration files in test resources
+
+alt + shift +x -- execution
+
+goal: clean install(This means delete the target directory which may contain old class files, jar etc and replace with the new one)
+Build failure due to Jdk is not configured in the IDE.
+Go to windows->preference and configure there.
+different maven versions/installations for different projects can also be set.
+
+json parsing example: read json data from file and create instance.
+Json : http://www.baeldung.com/jackson-object-mapper-tutorial 
+ 
+Assignments:
+
+1. Java Object to JSON - Take the model and persist to json file.
+    Answer: http://www.baeldung.com/jackson-object-mapper-tutorial
+2. read design patterns, code using factory and abstract factory
+    Answer: Follow this link, explained nicely factory pattern: https://alvinalexander.com/java/java-factory-pattern-example
+	Answer: Abstract factory: https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm
+	Hiding the creation logic, that will be taken care by factory.	
+3. read generics basics, code using generics
+   Answer: Why use Generics : excellent explanation https://docs.oracle.com/javase/tutorial/java/generics/why.html
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+class 3:
+
+1. method extraction.
+   Answer: select few lines of code on IDE, right click go to "Refactor" and then select "Extract Method". IDE feature to generate the method. 
+2. How to use the artifact which i build in another project.
+   Answer: First open the pom.xml of the project whose artifact you want to make use of. First few lines of its pom.xml provides its 
+           groupId, artifactId and the version. Now copy these to your pom.xml under <dependencies> tag of your project. Now build the 
+		   project, you can see the other projects artifact under "Maven Dependencies".
+   I am noticing few errors occuring due to not building the maven project right after the modifications and trying to execute it.
+
+3. How to work with custom maven settings.xml and change stuff there. What is the importance of settings.xml
+
+factory basics(Very important):
+
+question of responsibility. when i am trying to use functionality of your class. I Dont want responsibility of creation of objects.
+we don't want to create this obj, we just want to use it.
+In java, if i want to use funtcionality then we create the obj.
+java handled dispose of objects but creation is left it for us.
+one common design principle - "Single responsibility priciple". One class should do only one thing.
+my class is supposed to use the functionality of your class and also may be functionality of my class.
+knowledge of how to create an object is not simple. Its very difficult to manage the creation.
+
+
+Please check the class ComplicatedHelloWorld.java, and i find it very difficult to create an object for this class. So, it would be nice
+if someone else handle the creation of the object and i can concentrate on using the functionalities alone.
+So, to solve the above problem, "Factory" is introduced which takes care of creation of object. We just need to call the factory
+and ask the object. It will give us and then we can use the functionalities. And we never know the way how Factory creates the object. 
+Complication of creation of object is abstracted now.
+
+factories should never have functionalities, its only responsibility is to just create the objects and give it.
+
+please look into the factory "ComplicatedHelloWorldFactory.java" which i have created.
+
+One important thing to remember.
+Whenever we create the object, Put only mandatory fields in the constructor and the optional fields put it in getters and setters.
+No chance people can create the object with out the mandatory fields.
+
+assignments:
+1. set up git
+
+Answer:
+Open git bash and execute the below commands
+1. git clone https://github.com/Sagargitjava/Java.git
+2. 
+
+------------------------------------------------------------------------------------------------------------------------------------------;
